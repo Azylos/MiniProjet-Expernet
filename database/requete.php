@@ -47,3 +47,38 @@
         $result = $connexion->exec($req);
         return $result;
     }
+
+    function ShowEditor() {
+        global $connexion;
+        $editeurs = [];
+        $req = "SELECT * FROM editeur";
+        $result = $connexion->query($req);
+        if ($result) {
+            while ($row = $result->fetch()) {
+                $editeurs[] = $row;
+            }
+        }
+        return $editeurs;
+    }
+
+    //genre
+
+    function ShowGenre() {
+        global $connexion;
+        $genres = [];
+        $req = "SELECT * FROM genre";
+        $result = $connexion->query($req);
+        if ($result) {
+            while ($row = $result->fetch()) {
+                $genres[] = $row;
+            }
+        }
+        return $genres;
+    }
+
+    function AddPrice($id, $tarif) {
+        global $connexion;
+        $req = "INSERT INTO tarif (id, dateDebut, dateFin, tarif) VALUES ($id, CURDATE(), NULL, $tarif)";
+        $result = $connexion->exec($req);
+        return $result;
+    }
