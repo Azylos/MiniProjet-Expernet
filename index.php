@@ -26,8 +26,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
-    <?php require_once('includes/navbar.php') ;
-    var_dump($_SESSION); ?>
+    <?php require_once('includes/navbar.php') ?>
 
     <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
