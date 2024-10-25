@@ -8,6 +8,13 @@
         return $result;
     }
 
+    function ShowGamesId($id) {
+        global $connexion;
+        $req = "SELECT * FROM vue_jeux_details WHERE JeuxID = $id";
+        $result = $connexion->query($req);
+        return $result->fetch(PDO::FETCH_ASSOC);
+    }
+
     function AddGame($idEditeur, $idGenre, $titre, $description, $dateDeSortie, $image) {
         global $connexion;
         $req = "INSERT INTO jeux (IdEditeur, IdGenre, titre, description, dateDeSortie, image) VALUES (?, ?, ?, ?, ?, ?)";

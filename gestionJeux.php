@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RunGame v2 - Login</title>
+    <title>RunGame v2 - gestion</title>
     <style type="text/tailwindcss">
         @layer utilities {
           .content-auto {
@@ -56,7 +56,7 @@
                     echo '<td class="px-6 py-4">' . $row['dateDeSortie'] . '</td>';
                     echo '<td class="px-6 py-4">' . $row['image'] . '</td>';
                     echo '<td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Modifier</a>'; ?>
+                    <a href="modif.php?id='.$row["id"].'" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Modifier</a>'; ?>
                     <a href="#" onclick="confirmDelete(<?=$row['id']?>, '<?=addslashes($row['titre'])?>');" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Supprimer</a>
                     </td>
                     <?php echo '</tr>';
@@ -136,6 +136,10 @@
             </div>
         </div>
     </div>
+
+    <!-- <div id="editJeuxModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        
+    </div> -->
 
 
 <!-- <?php require_once('./includes/footer.php') ?>     -->
