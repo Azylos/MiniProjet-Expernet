@@ -88,7 +88,7 @@
     function confirmDelete(id, titre) {
         if (confirm(`Êtes-vous sûr de vouloir supprimer le jeu : ${titre} ?`)) {
             // Si l'utilisateur confirme, redirige vers le script PHP pour supprimer le jeu
-            window.location.href = "./lib/supJeux.php?id=" + id;
+            window.location.href = "./includes/supJeux.php?id=" + id;
         }
     }
   </script>
