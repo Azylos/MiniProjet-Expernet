@@ -13,9 +13,9 @@
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./asset/css/logform.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
 </head>
-<body>
+<body class=" bg-gray-50 ">
 <?php 
     require_once('includes/navbar.php');
     require_once('./database/requete.php');
@@ -31,7 +31,7 @@
     </button>
 </div>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <table id="myTable" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">ID</th>
@@ -137,10 +137,6 @@
         </div>
     </div>
 
-    <!-- <div id="editJeuxModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        
-    </div> -->
-
 
 <!-- <?php require_once('./includes/footer.php') ?>     -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -157,6 +153,7 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script>
     function confirmDelete(id, titre) {
         if (confirm(`Êtes-vous sûr de vouloir supprimer le jeu : ${titre} ?`)) {
@@ -164,6 +161,10 @@
             window.location.href = "./includes/supJeux.php?id=" + id;
         }
     }
+
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    });
   </script>
 </body>
 </html>
